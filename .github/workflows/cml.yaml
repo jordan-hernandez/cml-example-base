@@ -1,39 +1,22 @@
-# name: train-my-model
-# on: [push]
-# jobs:
-#   train-model:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v3
-#         with:
-#           ref: ${{ github.event.pull_request.head.sha }}
-#       - uses: iterative/setup-cml@v1
-#       - uses: actions/setup-python@v2
-#         with:
-#           python-version: '3.x'
-#       - name: Train model
-#         env:
-#           repo_token: ${{ secrets.GITHUB_TOKEN }}
-#         run: |
-#           pip install -r requirements.txt
-#           python3 train.py
-#           # Create CML report
-#           cml comment create --pr --publish metrics.txt
+
 name: train-my-model
 on: [push]
 jobs:
-   train-model:
-     runs-on: ubuntu-latest
-
-     steps:
-      - uses: actions/checkout@v2
+  train-model:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: iterative/setup-cml@v1
-      - env:
-          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Can use the default token for most functions
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Train model
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install -r requirements.txt
-          python train.py --output plot.png
-
-          echo 'My first CML report' > report.md
-          echo '![](./plot.png)' >> report.md
-          cml comment create --publish report.md
+          python train.py
+          # Create CML report
+          cml comment create --pr --publish metrics.txt
