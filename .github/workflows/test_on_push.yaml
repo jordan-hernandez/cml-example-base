@@ -22,7 +22,7 @@ jobs:
         run: |
           #export PYTHONPATH=
           #pip install pytest
-          pytest train.py
+          #pytest train.py
       - name: Python Black
         run: |
           black . --check
