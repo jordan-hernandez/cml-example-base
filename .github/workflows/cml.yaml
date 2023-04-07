@@ -17,6 +17,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install -r requirements.txt
-          python train.py
+          python3 train.py
           # Create CML report
           cml comment create --target=pr  --publish metrics.txt
