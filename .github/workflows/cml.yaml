@@ -24,5 +24,5 @@ jobs:
           
           cat metrics.txt >> report.md
           echo "![](./plot.png)" >> report.md
-          cml-comment confusion_matrix.png --md --title 'confusion-matrix' >> report.md
+          #cml-comment confusion_matrix.png --md --title 'confusion-matrix' >> report.md # la mayoria de comandos cml no funciona
           cml-send-comment report.md 
