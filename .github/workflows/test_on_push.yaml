@@ -1,9 +1,7 @@
 name: Python Package and Test
-
-    on: [push]
-
-    jobs:
-        build:
+on: [push]
+jobs:
+    build:
 
         runs-on: ubuntu-latest
         strategy:
