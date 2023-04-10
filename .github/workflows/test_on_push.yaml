@@ -22,7 +22,7 @@ jobs:
         run: |
           #export PYTHONPATH=
           #pip install pytest
-          pylint train.py 
+          pytest 
       - name: Python Black
         run: |
           black . --check
