@@ -23,6 +23,8 @@ jobs:
           #export PYTHONPATH=
           #pip install pytest
           pytest 
+        env:
+          LD_LIBRARY_PATH: /usr/local/lib
       - name: Python Black
         run: |
           black . --check
