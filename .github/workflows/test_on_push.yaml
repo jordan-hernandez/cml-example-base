@@ -29,6 +29,7 @@ jobs:
       - name: Python Black
         run: |
           #black . --check
+          
           black . 
 # jobs:
 #   build:
