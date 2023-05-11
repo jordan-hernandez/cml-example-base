@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 # Generate data
-seed = 42
+seed =42
 X, y = make_classification(n_samples=1000, random_state=seed)
 
 # Make a train/test split
