@@ -2,3 +2,4 @@ cml_example
 __pycache__
 example.py 
 .pytest_cache
+app.ipynb

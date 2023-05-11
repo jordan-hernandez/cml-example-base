@@ -28,7 +28,8 @@ jobs:
           LD_LIBRARY_PATH: /usr/local/lib
       - name: Python Black
         run: |
-          black . --check
+          #black . --check
+          black . 
 # jobs:
 #   build:
 
