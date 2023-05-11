@@ -22,7 +22,8 @@ jobs:
         run: |
           #export PYTHONPATH=
           #pip install pytest
-          #pytest 
+          #pytest
+          flake8 train.py 
         env:
           LD_LIBRARY_PATH: /usr/local/lib
       - name: Python Black
