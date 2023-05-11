@@ -26,4 +26,4 @@ jobs:
           echo "![](./plot.png)" >> report.md
           #cml-comment confusion_matrix.png --md --title 'confusion-matrix' >> report.md # la mayoria de comandos cml no funciona
           echo feature_importance.png --md >> report.md
-          #cml-send-comment report.md  # hacen lo mismo, cml comment create and cml-send
+          cml-send-comment report.md  # hacen lo mismo, cml comment create and cml-send
