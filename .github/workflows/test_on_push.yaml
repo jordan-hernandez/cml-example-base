@@ -22,14 +22,14 @@ jobs:
         run: |
           #export PYTHONPATH=
           #pip install pytest
-          #pytest
+          pytest train.py
           #flake8 train.py 
         env:
           LD_LIBRARY_PATH: /usr/local/lib
       - name: Python Black
         run: |
-          #black . --check
-          black .  
+          black . --check
+          #black .  
 # jobs:
 #   build:
 
